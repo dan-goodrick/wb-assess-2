@@ -6,9 +6,14 @@
 //   bicycles might come from different manufacturers
 // - Bicycles come in different colors (ex.: red, silver, blue…)
 class Bicycle {
-  // Replace this with your code
+  constructor(color="", manufacturer=""){
+    this.manufacturer=manufacturer
+    this.color = color
+    this.numWheels = 2
+  }
 }
-
+const bike = new Bicycle("schwinn", 'red')
+console.log(bike.color)
 // This User class is intended to be used in a web application where users can
 // log in with a username and password.
 //
@@ -25,10 +30,17 @@ class User {
   }
 
   processChangePassword(currentPassword, newPassword) {
-    // Replace this with your code
+    if (this.password===currentPassword){
+      this.password = newPassword
+      return true
+    }
+    return false
   }
 }
 
+const dan = new User('dan', 'safe')
+console.log(dan.processChangePassword('save', 'safer'))
+console.log(dan.password)
 // This Book class is complete -- you don't need to change anything here. Instad,
 // you'll use it to implement two methods on the Library class below:
 //
@@ -48,16 +60,20 @@ class Library {
   constructor() {
     this.books = [];
   }
-
-  createAndAddBook(title, author) {
-    // Replace this with your code
+  createAndAddBook (title, author){
+    const book = new Book(title, author)
+    this.books.push(book)
   }
-
-  findBooksByAuthor(author) {
-    // Replace this with your code
+  findBooksByAuthor (author){
+    return this.books.filter(obj => obj.author === author)
   }
 }
 
+const lib = new Library()
+lib.createAndAddBook("lost", "milton")
+lib.createAndAddBook("lest", "malton")
+lib.createAndAddBook("paradise", "malton")
+console.log(lib.findBooksByAuthor('milton'))
 // You might be familiar with the fact that, in geometry, squares are rectangles
 // with four equal sides. In other words, Square is a subclass of Rectangle.
 //
@@ -84,9 +100,18 @@ class Rectangle {
     return this.length * this.width;
   }
 }
-
+const rect = new Rectangle(3,4)
+rect
 class Square extends Rectangle {
-  // Replace this with your code
+  constructor(dim){
+    super(dim, dim)
+  }
+  getArea(){
+    if (this.length === this.width)
+{    return super.getArea()
+}  }
 }
-
+const square = new Square(5)
+square.length = 6
+console.log(square.getArea())
 export { Bicycle, Book, Library, Rectangle, Square, User };
