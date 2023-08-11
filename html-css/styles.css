@@ -12,3 +12,92 @@ the font is called 'nunito' and can be found on google fonts
 ***you can use it if you'd like or you can choose your own***
 
 */
+body {
+  font-family: "Nunito";
+}
+
+header {
+  height: 100px;
+  width: 100%;
+  background: rgb(37, 37, 37);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header #left {
+  font-size: 30px;
+  font-weight: bolder;
+  justify-content: flex-start;
+  color: rgb(42, 171, 226);
+}
+header #right {
+  font-size: 14px;
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+header #right p {
+  color: white;
+  width: 30%;
+}
+
+#content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.main {
+  justify-content: flex-start;
+  margin: 100px;
+  width:200%;
+}
+.main p {
+  margin: 50px;
+}
+#images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+#images img {
+  margin: 30px;
+  width: 25%;
+  height: auto;
+}
+
+
+.right {
+  justify-content: flex-end;
+  width: 50%;
+  flex-direction: column;
+  padding:50px;
+  padding
+}
+.right #profile {
+  align-items: center;
+  justify-content: space-around;
+  height:300px;
+}
+
+
+.right #profile img {
+  width:50%;
+}
+
+footer {
+  height: 100px;
+  background: rgb(42, 171, 226);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+footer p {
+  color: rgb(37, 37, 37);
+  font-size: 1.25em;
+}
