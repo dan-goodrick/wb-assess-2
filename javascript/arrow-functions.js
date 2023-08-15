@@ -44,9 +44,7 @@ const foods = [
 // Calories can be calculated by multiplying carbs by 4, protein by 4, fat by 9,
 // and then adding the results together.
 function addCalories() {
-  foods.forEach(obj => {
-    obj.calories = obj.carbs * 4 + obj.protein * 4 + obj.fat*9
-  })
+  foods.forEach(obj => obj.calories = obj.carbs * 4 + obj.protein * 4 + obj.fat*9)
   return foods;
 }
 
@@ -86,10 +84,7 @@ const products = [
 // and return it.
 function getSaleProducts() {
   // const prod_copy = [...products]
-  
-  const prod_copy = products.map(a => {return {...a}})
-  prod_copy.forEach(obj => obj.price*=(1-.25))
-  return prod_copy
+  return products.map(obj => ({...obj, price:obj.price*.75}))
 }
 console.log(getSaleProducts())
 
@@ -105,10 +100,7 @@ function getBlueProducts() {
   
   // Get the total price of all the products using the reduce method.
   function getTotalPrice() {
-    return products.reduce((accum, obj) => {
-      accum += obj.price
-      return accum
-    },0)
+    return products.reduce((accum, obj) => accum += obj.price,0)
   }
   console.log(getTotalPrice())
   

@@ -12,8 +12,10 @@ the font is called 'nunito' and can be found on google fonts
 ***you can use it if you'd like or you can choose your own***
 
 */
+@import url('url(https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');');
+
 body {
-  font-family: "Nunito";
+  font-family: "Nunito", 'sans serif';
 }
 
 header {
@@ -28,9 +30,12 @@ header {
 
 header #left {
   font-size: 30px;
-  font-weight: bolder;
+  
   justify-content: flex-start;
   color: rgb(42, 171, 226);
+}
+.bold {
+  font-weight: 500;
 }
 header #right {
   font-size: 14px;
@@ -55,9 +60,7 @@ header #right p {
   margin: 100px;
   width:200%;
 }
-.main p {
-  margin: 50px;
-}
+
 #images {
   display: flex;
   flex-direction: row;
@@ -78,14 +81,23 @@ header #right p {
   padding:50px;
 }
 .right #profile {
+  display:flex;
+  flex-direction:column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   height:300px;
+  box-shadow: 5px 5px 10px gray;
+  border-radius: 10px;
+
 }
 
 
-.right #profile img {
+#profile img {
   width:50%;
+}
+
+#profile p {
+  font-size:2em;
 }
 
 footer {
@@ -99,4 +111,29 @@ footer {
 footer p {
   color: rgb(37, 37, 37);
   font-size: 1.25em;
+}
+
+h2 {
+  font-weight: bolder;
+  font-size:1.2em;
+  padding: 20px 0px;
+}
+
+#popular-articles {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  width:300px;
+  box-shadow: 5px 5px 10px gray;
+  border-radius: 10px;
+}
+
+#popular-articles p {
+  font-size:1.5em;
+  margin:10px;
+  
+}
+#space{
+  height:100px;
 }
